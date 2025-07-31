@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMARTlab New York - Interdisciplinary research hub dedicated to socially responsive research, creative technology, and inclusive design. Part of the global SMARTlab network.">
+    <meta name="keywords" content="research hub, interdisciplinary research, creative technology, inclusive design, arts, sciences, humanities, New York">
+    <meta name="author" content="SMARTlab Academy">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SMARTlab New York - Interdisciplinary Research Hub">
+    <meta property="og:description" content="Interdisciplinary research hub fostering collaboration across arts, sciences, and humanities to address cultural and ecological challenges.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartlab-ny.pages.dev">
+    <meta property="og:image" content="https://smartlab-ny.pages.dev/smartlab-ny-og.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SMARTlab New York - Research Hub">
+    <meta name="twitter:description" content="Interdisciplinary research hub fostering collaboration across arts, sciences, and humanities.">
+    
+    <title>SMARTlab New York - Interdisciplinary Research Hub</title>
+    
+    <!-- Preload critical resources for Cloudflare Pages optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="ForestBackground.png" as="image" type="image/png">
+    
+    <style>
+        /* Dark Forest Design System - Cloudflare Pages Optimized */
+        :root {
+            /* Dark Theme Color Palette - No Green Tint */
+            --dark-deep: #0a0a0a;
+            --dark-medium: #1a1a1a;
+            --dark-light: #2a2a2a;
+            --dark-lighter: #3a3a3a;
+            
+            /* Neutral Accent Colors */
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            
+            /* Natural Earth Tones */
+            --earth-dark: #2c1810;
+            --earth-medium: #5d4037;
+            --earth-light: #8d6e63;
+            
+            /* Functional Colors */
+            --color-primary: var(--accent-blue);
+            --color-secondary: var(--accent-purple);
+            --color-accent: var(--accent-amber);
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #e5e7eb;
+            --color-text-muted: #9ca3af;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+            
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+            
+            /* Animations */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Layout */
+            --container-max-width: 1200px;
+            --header-height: 80px;
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-image: url('ForestBackground.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: repeat-y;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        /* Unified overlay for consistent forest background visibility */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.3) 0%, 
+                rgba(26, 26, 26, 0.4) 20%,
+                rgba(42, 42, 42, 0.5) 40%,
+                rgba(26, 26, 26, 0.5) 60%,
+                rgba(42, 42, 42, 0.6) 80%,
+                rgba(10, 10, 10, 0.5) 100%
+            );
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Performance Optimized Container */
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 {
+            font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-6xl));
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+        }
+        
+        h3 {
+            font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-secondary);
+        }
+        
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        a:hover {
+            color: var(--color-text-primary);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Dark Professional Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--color-accent);
+            border-radius: 50px;
+            background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.1) 100%);
+            color: var(--color-text-primary);
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border-color: var(--color-text-primary);
+        }
+        
+        /* Fixed Header with Dark Theme */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.95) 0%, 
+                rgba(26, 26, 26, 0.9) 50%,
+                rgba(42, 42, 42, 0.85) 100%
+            );
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        /* Logo with Depth Effect */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            position: relative;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: -5px;
+            width: calc(100% + 20px);
+            height: calc(100% + 10px);
+            background: radial-gradient(ellipse, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            transition: var(--transition-smooth);
+            background: white;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.4));
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Navigation */
+        .nav {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav {
+                display: flex;
+                gap: var(--spacing-xl);
+            }
+        }
+        
+        .nav a {
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 25px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .nav a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+        
+        .nav a:hover::before {
+            width: 80%;
+        }
+        
+        .nav a:hover {
+            color: var(--color-text-primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+            color: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.98) 0%, 
+                rgba(26, 26, 26, 0.95) 100%
+            );
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-md);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: var(--spacing-md);
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-smooth);
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--color-text-primary);
+            padding-left: calc(var(--spacing-md) + 10px);
+        }
+        
+        /* Simplified Parallax Container */
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Enhanced Glassmorphism for Extended Background */
+        .glass-overlay {
+            backdrop-filter: blur(20px) saturate(1.1);
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Content overlay for better readability */
+        .content-overlay {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        /* Hero Section with Enhanced Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: var(--spacing-xl);
+            border-radius: 24px;
+        }
+        
+        .hero h1 {
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: heroTextReveal 1.5s ease-out 0.5s forwards;
+        }
+        
+        .hero p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: heroTextReveal 1.5s ease-out 1s forwards;
+        }
+        
+        .hero-cta {
+            opacity: 0;
+            animation: heroTextReveal 1.5s ease-out 1.5s forwards;
+        }
+
+        .hero-logo {
+            display: block;
+            margin: var(--spacing-lg) auto;
+            width: 150px;
+            height: auto;
+            opacity: 0;
+            animation: heroTextReveal 1.5s ease-out 1.2s forwards;
+        }
+        
+        @keyframes heroTextReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .leaf {
+            width: 20px;
+            height: 25px;
+            background: var(--forest-bright);
+            border-radius: 0 100% 0 100%;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-4xl) 0;
+        }
+        
+        .section-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+        
+        /* Section backgrounds removed - using unified body background */
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 24px;
+            padding: var(--spacing-3xl);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-content p {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-smooth);
+        }
+        
+        .about-content.revealed p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .about-content p:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        
+        /* Team Profile Sections - simplified without individual backgrounds */
+        .team-profile-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-4xl) 0;
+        }
+        
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .profile-content {
+                grid-template-columns: 1fr 1.5fr;
+            }
+            .profile-content.reverse {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+        
+        .profile-image-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-smooth);
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: var(--color-accent);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+        }
+        
+        .profile-text {
+            border-radius: 24px;
+            padding: var(--spacing-2xl);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-text h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-3xl);
+        }
+        
+        .profile-text p {
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .profile-text a {
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+        
+        .profile-text a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, 
+                var(--dark-deep) 0%, 
+                var(--dark-medium) 50%,
+                var(--dark-deep) 100%
+            );
+            padding: var(--spacing-3xl) 0 var(--spacing-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .footer-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: var(--spacing-lg);
+        }
+        
+        .footer-section h4 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-display);
+        }
+        
+        .footer-section a {
+            display: block;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-sm);
+            transition: var(--transition-smooth);
+        }
+        
+        .footer-section a:hover {
+            color: var(--color-text-primary);
+            padding-left: var(--spacing-sm);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Performance Optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .parallax-layer {
+                transform: none !important;
+            }
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Loading State */
+        .loading {
+            opacity: 0;
+        }
+        
+        .loaded {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="loading">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://static.wixstatic.com/media/b9d9e3_c6881990d4a6416ba7c0039c51a41e0e~mv2.png/v1/fill/w_219,h_276,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/SMARTlab%20academy%20option%202.png" alt="SMARTlab Academy" class="logo-img" width="50" height="63">
+                    <span class="logo-text">SMARTlab NY</span>
+                </div>
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="#about">About</a>
+                    <a href="#team">Team</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span>☰</span>
+                </button>
+                <div class="mobile-menu" role="menu">
+                    <a href="#about" role="menuitem">About</a>
+                    <a href="#team" role="menuitem">Team</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Parallax -->
+        <section class="hero">
+            <!-- Floating Elements -->
+            <div class="floating-element leaf" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="floating-element leaf" style="top: 60%; left: 85%; animation-delay: 2s;"></div>
+            <div class="floating-element leaf" style="top: 30%; left: 70%; animation-delay: 4s;"></div>
+            
+            <div class="hero-content glass-overlay">
+                <h1>Introducing SMARTlab New York</h1>
+                <img src="SMARTlabLogo.png" alt="SMARTlab NY Logo" class="hero-logo" width="150" height="150">
+                <p>SMARTlab New York is an interdisciplinary research hub based in New York City and part of the global SMARTlab network of innovation-focused clusters. Dedicated to socially responsive research, creative technology, and inclusive design, SMARTlab New York fosters collaboration across the arts, sciences, and humanities to address some of today's most pressing cultural and ecological challenges.</p>
+                <div class="hero-cta">
+                    <a href="#about" class="btn">Explore Our Research</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="about-content glass-overlay reveal">
+                        <p>The core team brings together renowned experts and visionary thinkers. Dr. Gayil Nalls, an interdisciplinary artist and sensory theorist, leads projects at the intersection of olfactory heritage, environmental conservation, and public engagement. Dr. Daria Dorosh, an artist and researcher, explores the convergence of fashion, data, AI, and sustainability through feminist and systems-based approaches. José Marinez contributes his expertise in digital design and new media technologies to develop impactful solutions for health and longevity.</p>
+                        <p>Together, the SMARTlab New York team is advancing transdisciplinary research and public scholarship through artistic experimentation, technological innovation, and community-centered practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Profile Sections -->
+        <section id="team" class="team-profile-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="profile-content reveal">
+                        <div class="profile-image-container">
+                            <img src="https://static.wixstatic.com/media/b9d9e3_0580ccfdb9744225bf322744f2771501~mv2.png/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/b9d9e3_0580ccfdb9744225bf322744f2771501~mv2.png" alt="Dr. Gayil Nalls" class="profile-image" loading="lazy" width="400" height="400">
+                        </div>
+                        <div class="profile-text glass-overlay">
+                            <h3>Dr. Gayil Nalls</h3>
+                            <p>Dr. Gayil Nalls is an interdisciplinary artist and sensory theorist whose work with SMARTlab New York centers on the complex relationships between scent, memory, ecology, and cultural identity. Through her founding and leadership of the World Sensorium Conservancy, she has created a globally recognized platform for research and action at the intersection of olfactory heritage and environmental conservation.</p>
+                            
+                            <p>Her work is rooted in the understanding that scent is not only a biological and emotional trigger but also a cultural archive. The World Sensorium Conservancy documents and protects the world's most culturally significant aromatic and medicinal plants, many of which are endangered due to climate change, deforestation, and habitat loss. This living archive is supported by rigorous research, drawing on ethnobotany, conservation science, and community memory to highlight the ecological and cultural importance of iconic species.</p>
+                            
+                            <p>Dr. Nalls's artistic and theoretical practice invites people to engage with scent as a way of reconnecting with place and history. By using scent as a primary medium, her work bridges the sensory and the political, offering experiences that move people beyond visual aesthetics to embodied environmental awareness. From public scent installations to educational campaigns, she encourages participatory experiences that foster ecological empathy and a sense of collective responsibility for the natural world.</p>
+                            
+                            <p>Her projects often take the form of collaborative and community-based efforts, connecting local knowledge with global networks. Through the World Sensorium Conservancy, its journal Plantings, and global database, she promotes the stewardship of aromatic plants and traditional ecological knowledge, while advocating for conservation strategies that are as culturally informed as they are scientifically grounded.</p>
+                            
+                            <p>More about Dr. Nalls's work and the World Sensorium Conservancy can be found at <a href="https://worldsensorium.com" target="_blank" rel="noopener noreferrer">worldsensorium.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-profile-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="profile-content reverse reveal">
+                        <div class="profile-text glass-overlay">
+                            <h3>Dr. Daria Dorosh</h3>
+                            <p>Dr. Daria Dorosh is an artist, designer, and researcher whose work sits at the intersection of fashion, data, artificial intelligence, and sustainability. A pioneer in integrating feminist theory with systems thinking and emerging technologies, she brings decades of experience in both practice and pedagogy to SMARTlab New York. Her interdisciplinary approach reimagines the role of art and design in shaping more equitable and ecologically sound futures.</p>
+                            
+                            <p>Central to Dr. Dorosh's practice is her exploration of how bodies, garments, and information systems interact—challenging conventional narratives in fashion and proposing alternative models rooted in care, repair, and resilience. She is especially interested in how digital tools, AI, and pattern recognition can support sustainable fashion practices and empower individual and collective agency.</p>
+                            
+                            <p>Her current experimental project, Be the Museum, is a collaboration with artist Yvonne Shortt that reframes the museum not as a static institution, but as a living, participatory entity. The project invites viewers to rethink authorship, ownership, and visibility in the cultural sector. You can learn more about this work and her contributions on the Museum for Contemporary Artists website, where she maintains dedicated project pages.</p>
+                            
+                            <p>Dr. Dorosh's contributions to SMARTlab New York reflect a commitment to rethinking how knowledge is created, embodied, and shared, inviting new modes of inquiry that merge art, technology, and systems change. Read more about Daria Dorsch's work at: <a href="https://www.dariadorosh.com/" target="_blank" rel="noopener noreferrer">https://www.dariadorosh.com/</a></p>
+                        </div>
+                        <div class="profile-image-container">
+                            <img src="https://static.wixstatic.com/media/b9d9e3_6fb3835b20e74c23bc112929d1f2c528~mv2.png/v1/fill/w_600,h_355,al_c,q_85,enc_avif,quality_auto/b9d9e3_6fb3835b20e74c23bc112929d1f2c528~mv2.png" alt="Dr. Daria Dorosh" class="profile-image" loading="lazy" width="400" height="237">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-profile-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="profile-content reveal">
+                        <div class="profile-image-container">
+                            <img src="HumanisticIntelligence.png" alt="Humanistic Intelligence" class="profile-image" loading="lazy" width="400" height="400">
+                        </div>
+                        <div class="profile-text glass-overlay">
+                            <h3>José Marinez</h3>
+                            <p>José Marinez is a PhD candidate at the College of Engineering and Architecture, SMARTlab, Inclusive Design and Creative Technology Innovation, Inclusive Design Research Centre, University College Dublin. His research focuses on the synergy between humanistic intelligence and artificial intelligence, driven by the core principle of augmenting rather than replacing human capabilities. A systems thinker with a rigorous and ethically grounded approach, José is committed to developing technologies that amplify cognitive agency, embodiment, and human flourishing.</p>
+                            
+                            <p>As both a hardware and software engineer, José skillfully integrates physical and digital interfaces to create meaningful interactions that support integrative health, cognitive empowerment, and social equity. Drawing inspiration from cognitive science, design justice, and integrative wellness, his research and professional contributions prioritize usability, accessibility, and long-term societal impact.</p>
+                            
+                            <p>With experience at several of the world's leading software companies, José has played pivotal roles in the development and deployment of scalable, high-impact technological solutions. His work consistently demonstrates a deep respect for equitable access, responsible innovation, and the thoughtful integration of technology into daily life.</p>
+                            
+                            <p>Driven by a clear ethical compass, José advocates for technology designed with integrity—fostering an environment where critical inquiry meets actionable innovation. He envisions a future where technology responsibly enhances human potential, empowering individuals and communities to thrive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SMARTlab New York</h4>
+                    <a href="#about">Research Hub</a>
+                    <a href="#team">Our Team</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Global Network</h4>
+                    <a href="https://www.smartlab.academy" target="_blank" rel="noopener noreferrer">SMARTlab Academy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Research Areas</h4>
+                    <a href="https://worldsensorium.com" target="_blank" rel="noopener noreferrer">Olfactory Heritage</a>
+                    <a href="https://www.dariadorosh.com/" target="_blank" rel="noopener noreferrer">Fashion & AI</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#team">Team Profiles</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SMARTlab New York. All rights reserved. Part of the SMARTlab Academy Global Network.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cloudflare Pages Optimized JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Performance optimized variables
+            const header = document.querySelector('header');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            // Removed parallax layers - using unified background
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            let isScrolling = false;
+            let lastScrollTop = 0;
+            
+            // Mobile Menu Functionality
+            mobileMenuToggle.addEventListener('click', function() {
+                const isActive = mobileMenu.classList.contains('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', !isActive);
+            });
+            
+            // Close mobile menu when clicking on links
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Unified Background Parallax Effect
+            function updateParallax() {
+                if (!isScrolling) return;
+                
+                const scrollTop = window.pageYOffset;
+                const documentHeight = document.documentElement.scrollHeight;
+                const windowHeight = window.innerHeight;
+                
+                // Create subtle parallax effect for the unified background
+                const parallaxSpeed = 0.3;
+                const yPos = -(scrollTop * parallaxSpeed);
+                
+                // Apply parallax to body background with extended coverage
+                document.body.style.backgroundPosition = `center ${yPos}px`;
+                
+                // Ensure background scales properly for full page coverage
+                const scrollProgress = scrollTop / (documentHeight - windowHeight);
+                const minScale = 100;
+                const maxScale = 110;
+                const scaleAmount = minScale + (scrollProgress * (maxScale - minScale));
+                document.body.style.backgroundSize = `${scaleAmount}% auto`;
+                
+                isScrolling = false;
+            }
+            
+            // Throttled Scroll Handler
+            let ticking = false;
+            function handleScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const scrollTop = window.pageYOffset;
+                        
+                        // Header hide/show
+                        if (scrollTop > lastScrollTop && scrollTop > 100) {
+                            header.style.transform = 'translateY(-100%)';
+                        } else {
+                            header.style.transform = 'translateY(0)';
+                        }
+                        lastScrollTop = scrollTop;
+                        
+                        // Parallax
+                        isScrolling = true;
+                        updateParallax();
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            
+            // Scroll Event Listener
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            // Intersection Observer for Reveal Animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -10% 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe reveal elements
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Floating Elements Animation
+            const floatingElements = document.querySelectorAll('.floating-element');
+            function animateFloatingElements() {
+                floatingElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.2);
+                    const amplitude = 10 + (index * 5);
+                    const time = Date.now() * 0.001;
+                    const yOffset = Math.sin(time * speed) * amplitude;
+                    element.style.transform = `translateY(${yOffset}px)`;
+                });
+                requestAnimationFrame(animateFloatingElements);
+            }
+            animateFloatingElements();
+            
+            // Loading State Management
+            window.addEventListener('load', function() {
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+                
+                // Initialize parallax after load
+                updateParallax();
+            });
+            
+            // Performance Monitoring for Cloudflare Pages
+            if ('PerformanceObserver' in window) {
+                const observer = new PerformanceObserver((list) => {
+                    list.getEntries().forEach((entry) => {
+                        if (entry.entryType === 'largest-contentful-paint') {
+                            console.log('LCP:', entry.startTime);
+                        }
+                        if (entry.entryType === 'first-input') {
+                            console.log('FID:', entry.processingStart - entry.startTime);
+                        }
+                        if (entry.entryType === 'layout-shift') {
+                            if (!entry.hadRecentInput) {
+                                console.log('CLS:', entry.value);
+                            }
+                        }
+                    });
+                });
+                
+                observer.observe({
+                    entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift']
+                });
+            }
+            
+            // Error Handling
+            window.addEventListener('error', function(event) {
+                console.error('Forest parallax error:', event.error);
+            });
+            
+            // Reduced Motion Support
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (prefersReducedMotion.matches) {
+                parallaxLayers.forEach(layer => {
+                    layer.style.transform = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
