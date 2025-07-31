@@ -106,11 +106,7 @@
             font-size: var(--font-size-base);
             line-height: 1.6;
             color: var(--color-text-primary);
-            background-image: url('ForestBackground.png');
-            background-size: cover;
-            background-position: center top;
-            background-repeat: repeat-y;
-            background-attachment: fixed;
+            background-color: var(--dark-deep);
             min-height: 100vh;
             position: relative;
             -webkit-font-smoothing: antialiased;
@@ -120,6 +116,20 @@
         
         /* Unified overlay for consistent forest background visibility */
         body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('ForestBackground.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -2;
+        }
+
+        body::after {
             content: '';
             position: fixed;
             top: 0;
@@ -955,31 +965,6 @@
                 }
             });
             
-            // Unified Background Parallax Effect
-            function updateParallax() {
-                if (!isScrolling) return;
-                
-                const scrollTop = window.pageYOffset;
-                const documentHeight = document.documentElement.scrollHeight;
-                const windowHeight = window.innerHeight;
-                
-                // Create subtle parallax effect for the unified background
-                const parallaxSpeed = 0.3;
-                const yPos = -(scrollTop * parallaxSpeed);
-                
-                // Apply parallax to body background with extended coverage
-                document.body.style.backgroundPosition = `center ${yPos}px`;
-                
-                // Ensure background scales properly for full page coverage
-                const scrollProgress = scrollTop / (documentHeight - windowHeight);
-                const minScale = 100;
-                const maxScale = 110;
-                const scaleAmount = minScale + (scrollProgress * (maxScale - minScale));
-                document.body.style.backgroundSize = `${scaleAmount}% auto`;
-                
-                isScrolling = false;
-            }
-            
             // Throttled Scroll Handler
             let ticking = false;
             function handleScroll() {
@@ -994,10 +979,6 @@
                             header.style.transform = 'translateY(0)';
                         }
                         lastScrollTop = scrollTop;
-                        
-                        // Parallax
-                        isScrolling = true;
-                        updateParallax();
                         
                         ticking = false;
                     });
