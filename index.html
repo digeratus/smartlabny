@@ -840,7 +840,7 @@
             <div class="container">
                 <div class="section-content">
                     <div class="about-content glass-overlay reveal">
-                        <p>The core team brings together renowned experts and visionary thinkers. Dr. Gayil Nalls, an interdisciplinary artist and sensory theorist, leads projects at the intersection of olfactory heritage, environmental conservation, and public engagement. Dr. Daria Dorosh, an artist and researcher, explores the convergence of fashion, data, AI, and sustainability through feminist and systems-based approaches. José Marinez contributes his expertise in digital design and new media technologies to develop impactful solutions for health and longevity.</p>
+                        <p>The core team brings together renowned experts and visionary thinkers. Dr. Gayil Nalls, an interdisciplinary artist and sensory theorist, leads projects at the intersection of olfactory heritage, environmental conservation, and public engagement. Dr. Daria Dorosh, an artist and researcher, explores the convergence of fashion, data, AI, and sustainability through feminist and systems-based approaches. José Marinez integrates his expertise in humanistic intelligence and AI with hardware and software engineering, developing ethically grounded technologies that augment human capabilities and support integrative health, cognitive empowerment, and community flourishing.</p>
                         <p>Together, the SMARTlab New York team is advancing transdisciplinary research and public scholarship through artistic experimentation, technological innovation, and community-centered practice.</p>
                     </div>
                 </div>
@@ -1061,37 +1061,6 @@
             window.addEventListener('load', function() {
                 document.body.classList.remove('loading');
                 document.body.classList.add('loaded');
-                
-                // Initialize parallax after load
-                updateParallax();
-            });
-            
-            // Performance Monitoring for Cloudflare Pages
-            if ('PerformanceObserver' in window) {
-                const observer = new PerformanceObserver((list) => {
-                    list.getEntries().forEach((entry) => {
-                        if (entry.entryType === 'largest-contentful-paint') {
-                            console.log('LCP:', entry.startTime);
-                        }
-                        if (entry.entryType === 'first-input') {
-                            console.log('FID:', entry.processingStart - entry.startTime);
-                        }
-                        if (entry.entryType === 'layout-shift') {
-                            if (!entry.hadRecentInput) {
-                                console.log('CLS:', entry.value);
-                            }
-                        }
-                    });
-                });
-                
-                observer.observe({
-                    entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift']
-                });
-            }
-            
-            // Error Handling
-            window.addEventListener('error', function(event) {
-                console.error('Forest parallax error:', event.error);
             });
             
             // Reduced Motion Support
