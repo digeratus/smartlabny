@@ -602,20 +602,8 @@
             align-items: center;
         }
 
-        .profile-content .profile-image-container {
-            order: 1;
-        }
-
-        .profile-content .profile-text {
-            order: 2;
-        }
-
-        .profile-content.reverse .profile-image-container {
-            order: 2;
-        }
-
-        .profile-content.reverse .profile-text {
-            order: 1;
+        .profile-content.reverse {
+            flex-direction: column-reverse;
         }
         
         @media (min-width: 1024px) {
@@ -623,6 +611,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1.5fr;
             }
+
             .profile-content.reverse {
                 grid-template-columns: 1.5fr 1fr;
             }
